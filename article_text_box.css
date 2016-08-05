@@ -1,7 +1,10 @@
 /* General layout items */
 #data-chart {
-  padding: 8em 0em;
+  margin: 5em 0em;
+  height: 30em;
   text-align: center;
+  background-color: rgba(30, 30, 30, 0.09);
+  border-radius: 0.5em;
 }
 
 a {
