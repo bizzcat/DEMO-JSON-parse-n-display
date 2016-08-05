@@ -1,0 +1,64 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Article Text Box</title>
+    <link href="{% static 'kw_data/article_text_box.css' %}" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+
+    <div id='nav-bar'>
+
+      <p class='logo'>
+        <img src="{% static 'index/logo.png' %}"></img>
+      </p>
+
+      <div class='nav-bar-options'>
+        <p class='nav'>
+          main
+        </p>
+        <p class='nav'>
+          bio
+        </p>
+        <p class='nav'>
+          blog
+        </p>
+        <p class='nav'>
+          contact
+        </p>
+      </div>
+
+    </div>
+
+    <div id="data-chart">
+
+      <form name="myform">
+          <select name="journalName" style="width: 30%" size="6" onChange="onJournalChange()">
+          </select>
+
+          <select name="kwName" style="width: 20%" size="6" onChange="onKeywordChange()">
+            <option selected disabled hidden style='display: none' value=''></option>
+          </select>
+          <select name="articleName" style="width: 45%" size="6" onChange="onArticleChange()">
+            <option selected disabled hidden style='display: none' value=''></option>
+          </select>
+      </form>
+
+    </div>
+
+  </body>
+
+  <script>
+    var data_json_str = {{ data_json_str | safe }};
+  </script>
+
+
+  <script src="http://code.jquery.com/jquery-2.2.3.js"></script>
+  <script src="{% static 'kw_data/article_text_box.js' %}"></script>
+  <script src="{% static 'index/index.js' %}"></script>
+</html>
